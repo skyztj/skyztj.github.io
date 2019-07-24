@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Sky</title>
+  
+  <subtitle>blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-07-24T10:21:37.832Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Ztj</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux命令收集</title>
+    <link href="http://yoursite.com/2019/07/24/Linux%E5%91%BD%E4%BB%A4%E6%94%B6%E9%9B%86/"/>
+    <id>http://yoursite.com/2019/07/24/Linux命令收集/</id>
+    <published>2019-07-24T05:44:27.000Z</published>
+    <updated>2019-07-24T10:21:37.832Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="批量杀死进程命令"><a href="#批量杀死进程命令" class="headerlink" title="批量杀死进程命令"></a>批量杀死进程命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef|grep boco|grep -v grep|awk &apos;&#123;print &quot;kill -9 &quot;$2&#125;&apos;</span><br></pre></td></tr></table></figure><ol><li>ps -ef|grep aaa|grep -v grep   </li></ol><p>这是大家很熟悉的命令，这里就不再多说，就是从当前系统运行的进程的进程名中包含aaa关键字的进程。</p><ol start="2"><li>后面部分就是awk命令了，一般awk命令的格式为：awk ‘ pattern {action} ‘</li></ol><p>​    print是打印，kill -9 是强制停止进程的命令， $2就是前面有ps -ef命令得出的结果的第二列上显示的内容。</p><p>下面举一个简单的例子：</p><p>#ps -ef|grep boco|grep -v grep<br>    root  9884  9883  0 17:10:01 ?         0:00 sendmail -oem -oi -froot boco<br>    root  9883  9880  0 17:10:01 ?         0:00 /usr/bin/mail boco<br>    boco 11112     1  0  Dec 24  ?         0:00 ./boco_appmaster -d /home/boco/agent<br>    boco 11126 11125 61  Dec 24  ?        52:59 ./boco_hostagent -i socket -l<br>    boco 11125 11112 37  Dec 24  ?        43:25 ./boco_appmaster -d /home/boco/agent<br>#ps -ef|grep boco|grep -v grep|awk ‘{print “kill -9 “$2}’<br>kill -9 9884<br>kill -9 9883<br>kill -9 11112<br>kill -9 11126<br>kill -9 11125</p><p> 可以看出，ps -ef|grep boco|grep -v grep列出了当前主机中运行的进程中包含boco关键字的进程</p><p>而ps -ef|grep boco|grep -v grep|awk ‘{print “kill -9 “$2}’则列出了要kill掉这些进程的命令，并将之打印在了屏幕上</p><p>在ps -ef|grep boco|grep -v grep|awk ‘{print “kill -9 “$2}’后面加上|sh后，则执行这些命令，进而杀掉了这些进程。</p><p>示例：ps -aux|grep “service_2.php”|awk ‘{print “kill -9 “$2}’|sh</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;批量杀死进程命令&quot;&gt;&lt;a href=&quot;#批量杀死进程命令&quot; class=&quot;headerlink&quot; title=&quot;批量杀死进程命令&quot;&gt;&lt;/a&gt;批量杀死进程命令&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://yoursite.com/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Typora快捷键收集</title>
+    <link href="http://yoursite.com/2019/07/24/typora%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%94%B6%E9%9B%86/"/>
+    <id>http://yoursite.com/2019/07/24/typora快捷键收集/</id>
+    <published>2019-07-24T05:37:48.000Z</published>
+    <updated>2019-07-24T10:20:29.876Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="对文字的特殊标注"><a href="#对文字的特殊标注" class="headerlink" title="对文字的特殊标注"></a>对文字的特殊标注</h1><p>标题    </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 一阶标题  或者快捷键Ctrl+1</span><br><span class="line">## 二阶标题 或者快捷键Ctrl+2</span><br><span class="line">### 三阶标题    或者快捷键Ctrl+3</span><br><span class="line">#### 四阶标题   或者快捷键Ctrl+4</span><br><span class="line">##### 五阶标题  或者快捷键Ctrl+5</span><br><span class="line">###### 六阶标题 或者快捷键Ctrl+6</span><br></pre></td></tr></table></figure><p>下划线</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;u&gt;下划线的内容&lt;/u&gt; 或按快捷键Ctrl+U</span><br></pre></td></tr></table></figure><p>字体加粗</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">**加粗内容**    或按快捷键Ctrl+B</span><br></pre></td></tr></table></figure><p>斜体</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*倾斜内容*  或按快捷键Ctrl+I</span><br></pre></td></tr></table></figure><p>删除线</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~~删除线的内容~~  或按快捷键Alt+Shift+5</span><br></pre></td></tr></table></figure><p>文字高亮</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==我是最重要的==</span><br></pre></td></tr></table></figure><p>角标</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x^2^    H~2~O</span><br></pre></td></tr></table></figure><p>list<br>有序</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数字+英文小数点(.)+空格</span><br></pre></td></tr></table></figure><p>无序</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ 、- 、* 创建无序列，任意数字开始+空格创建有序列表</span><br></pre></td></tr></table></figure><p>Todolist</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 参加会议</span><br><span class="line">- [x] 中超足球赛</span><br></pre></td></tr></table></figure><p>Table</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">快捷键Ctrl+T弹出对话框</span><br></pre></td></tr></table></figure><p>分割线</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">***+回车  </span><br><span class="line">---+回车</span><br></pre></td></tr></table></figure><h1 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h1><p>图片</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![图片内容](http://t10.baidu.com/it/u=1069603383,3074552113&amp;fm=170&amp;s=771B15C75C12D8D61C3C69FB0300501F&amp;w=640&amp;h=426&amp;img.JPEG)</span><br><span class="line"> 也可使用快捷键Ctrl+K</span><br><span class="line">PS：也可将图片直接拖拽进来，自动生成链接</span><br></pre></td></tr></table></figure><p>链接<br>内行式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[百度一下，你就知道](https://www.baidu.com/)</span><br></pre></td></tr></table></figure><p>参考式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[百度一下，你就知道][]https://www.baidu.com/          # 第二个括号内可任意填写(不显)</span><br><span class="line">​</span><br></pre></td></tr></table></figure><p>[百度一下，你就知道][]<a href="https://www.baidu.com/" target="_blank" rel="noopener">https://www.baidu.com/</a></p><p>快速链接<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;http://www.baidu.com&gt;</span><br><span class="line">PS：按住Ctrl点击链接可直接打开。</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>#数学公式（简）<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Typora支持加入用LaTeX写成的数学公式，并且在软件界面下用MathJax直接渲染。</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>*1.行内公式(inline math)，可以在偏好设置中单独打开，由一个美元符号将公式围起来；name=\prod \frac{1}{i^2}$<br>*2.行外公式，直接按Ctrl+Shift+M；(双$+回车也可做到)<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">注：上标和下标可以使用数学表达式来获取</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>#其余</p><p>引用<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;+空格    或按快捷键Ctrl+Shift+Q</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>注释<br>要添加注释的文字<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">这是我们的标号[^1]</span><br><span class="line">[^1]:标号的含义</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>表情</p><p>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">:单词:</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>目录<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><p>Typora快捷键整合<br>​<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Ctrl+1  一阶标题    Ctrl+B  字体加粗</span><br><span class="line">Ctrl+2  二阶标题    Ctrl+I  字体倾斜</span><br><span class="line">Ctrl+3  三阶标题    Ctrl+U  下划线</span><br><span class="line">Ctrl+4  四阶标题    Ctrl+Home   返回Typora顶部</span><br><span class="line">Ctrl+5  五阶标题    Ctrl+End    返回Typora底部</span><br><span class="line">Ctrl+6  六阶标题    Ctrl+T  创建表格</span><br><span class="line">Ctrl+L  选中某句话   Ctrl+K  创建超链接</span><br><span class="line">Ctrl+D  选中某个单词  Ctrl+F  搜索</span><br><span class="line">Ctrl+E  选中相同格式的文字   Ctrl+H  搜索并替换</span><br><span class="line">Alt+Shift+5 删除线 Ctrl+Shift+I    插入图片</span><br><span class="line">Ctrl+Shift+M    公式块 Ctrl+Shift+Q    引用</span><br><span class="line"></span><br><span class="line">注：一些实体符号需要在实体符号之前加”\”才能够显示</span><br><span class="line">​</span><br></pre></td></tr></table></figure></p><pre><code></code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;对文字的特殊标注&quot;&gt;&lt;a href=&quot;#对文字的特殊标注&quot; class=&quot;headerlink&quot; title=&quot;对文字的特殊标注&quot;&gt;&lt;/a&gt;对文字的特殊标注&lt;/h1&gt;&lt;p&gt;标题    &lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;ta
+      
+    
+    </summary>
+    
+    
+      <category term="typora" scheme="http://yoursite.com/tags/typora/"/>
+    
+  </entry>
+  
+</feed>
