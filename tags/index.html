@@ -96,7 +96,7 @@
 <meta property="og:site_name" content="Sky">
 <meta property="og:description" content="我的自留地">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-24T07:24:16.481Z">
+<meta property="og:updated_time" content="2019-07-25T01:39:55.394Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tags">
 <meta name="twitter:description" content="我的自留地">
@@ -417,6 +417,20 @@
 
           
           
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://xiaoerguang.top/" title="小二光" target="_blank">小二光</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
 
           
 
@@ -478,7 +492,7 @@
 
 -->
 
-
+<br><span id="timeDate" title="网站运行时间">载入天数...</span><span id="times" title="网站运行时间">载入时分秒...</span>
         
 
 
@@ -985,5 +999,21 @@
 
   
 
+  <script>
+  var now = new Date(); 
+  function createtime() { 
+      var grt= new Date("07/24/2019 23:45:01");
+      now.setTime(now.getTime()+250); 
+      days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+      hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+      if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+      mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+      seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+      snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+      document.getElementById("timeDate").innerHTML ="(ㆆᴗㆆ)本弱已存活了"+dnum+"&thinsp;天"; 
+      document.getElementById("times").innerHTML = hnum + "&thinsp;时" + mnum + "&thinsp;分" + snum + "&thinsp;秒"; 
+  } 
+	setInterval("createtime()",250);
+ </script>
 </body>
 </html>
