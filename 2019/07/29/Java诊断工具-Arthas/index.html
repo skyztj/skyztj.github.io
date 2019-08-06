@@ -84,15 +84,19 @@
 <meta name="description" content="Arthas 是Alibaba开源的Java诊断工具。 当你遇到以下类似问题而束手无策时，Arthas可以帮助你解决：  这个类从哪个 jar 包加载的？为什么会报各种类相关的 Exception？ 我改的代码为什么没有执行到？难道是我没 commit？分支搞错了？ 遇到问题无法在线上 debug，难道只能通过加日志再重新发布吗？ 线上遇到某个用户的数据处理有问题，但线上同样无法 debug，线">
 <meta name="keywords" content="Arthas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java诊断工具-Arthas">
+<meta property="og:title" content="Sky">
 <meta property="og:url" content="http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/index.html">
 <meta property="og:site_name" content="Sky">
 <meta property="og:description" content="Arthas 是Alibaba开源的Java诊断工具。 当你遇到以下类似问题而束手无策时，Arthas可以帮助你解决：  这个类从哪个 jar 包加载的？为什么会报各种类相关的 Exception？ 我改的代码为什么没有执行到？难道是我没 commit？分支搞错了？ 遇到问题无法在线上 debug，难道只能通过加日志再重新发布吗？ 线上遇到某个用户的数据处理有问题，但线上同样无法 debug，线">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/alibaba/arthas/raw/master/site/src/site/sphinx/arthas.png">
-<meta property="og:updated_time" content="2019-07-29T06:59:17.874Z">
+<meta property="og:image" content="d:%5Cblog%5Csource%5Cphotos~%60ACTZ$~L%7B$7H%60QA%5BT4X%60FQ.png">
+<meta property="og:image" content="d:%5Cblog%5Csource%5Cphotos%5C1565062610770.png">
+<meta property="og:image" content="d:%5Cblog%5Csource%5Cphotos%5C1565062869194.png">
+<meta property="og:image" content="d:%5Cblog%5Csource%5Cphotos%5C1565062933540.png">
+<meta property="og:updated_time" content="2019-08-06T04:34:30.016Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java诊断工具-Arthas">
+<meta name="twitter:title" content="Sky">
 <meta name="twitter:description" content="Arthas 是Alibaba开源的Java诊断工具。 当你遇到以下类似问题而束手无策时，Arthas可以帮助你解决：  这个类从哪个 jar 包加载的？为什么会报各种类相关的 Exception？ 我改的代码为什么没有执行到？难道是我没 commit？分支搞错了？ 遇到问题无法在线上 debug，难道只能通过加日志再重新发布吗？ 线上遇到某个用户的数据处理有问题，但线上同样无法 debug，线">
 <meta name="twitter:image" content="https://github.com/alibaba/arthas/raw/master/site/src/site/sphinx/arthas.png">
 
@@ -138,7 +142,7 @@
   daovoice('update');
   </script>
 
-  <title>Java诊断工具-Arthas | Sky</title>
+  <title> | Sky</title>
   
 
 
@@ -314,7 +318,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java诊断工具-Arthas</h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -380,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.4k
+                  2.5k
                 </span>
               
 
@@ -396,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  10
+                  11
                 </span>
               
             </div>
@@ -577,6 +581,15 @@
 <li>shutdown——关闭 Arthas 服务端，所有 Arthas 客户端全部退出</li>
 <li><a href="https://alibaba.github.io/arthas/keymap.html" target="_blank" rel="noopener">keymap</a>——Arthas快捷键列表及自定义快捷键</li>
 </ul>
+<h3 id="牛刀小试"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a><em>牛刀小试</em></h3><p>测试环境使用arthas工具包获取内存里运行的数据</p>
+<p>使用sc 查看目标类是否已经被加载</p>
+<p><img src="D:%5Cblog%5Csource%5Cphotos~%60ACTZ$~L%7B$7H%60QA%5BT4X%60FQ.png" alt="img"></p>
+<p>通过watch 查看getPropertyBeans（）方法返回的数据</p>
+<p><img src="D:%5Cblog%5Csource%5Cphotos%5C1565062610770.png" alt="1565062610770"></p>
+<p> 执行命令：watch com.ccservice.control.TrainPropertyMessage  getPropertyBeans  returnObj</p>
+<p><img src="D:%5Cblog%5Csource%5Cphotos%5C1565062869194.png" alt="1565062869194"></p>
+<p><img src="D:%5Cblog%5Csource%5Cphotos%5C1565062933540.png" alt="1565062933540"></p>
+<p>获取到的数据，中文不过是乱码，后续再解决。</p>
 
       
     </div>
@@ -592,11 +605,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/2019/07/29/Java诊断工具-Arthas/">Java诊断工具-Arthas</a></p>
+  <p><span>本文标题:</span><a href="/2019/07/29/Java诊断工具-Arthas/"></a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ztj 的个人博客">ztj</a></p>
   <p><span>发布时间:</span>2019年07月29日 - 13:07</p>
-  <p><span>最后更新:</span>2019年07月29日 - 14:07</p>
-  <p><span>原始链接:</span><a href="/2019/07/29/Java诊断工具-Arthas/" title="Java诊断工具-Arthas">http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/</a>
+  <p><span>最后更新:</span>2019年08月06日 - 12:08</p>
+  <p><span>原始链接:</span><a href="/2019/07/29/Java诊断工具-Arthas/" title>http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 本博客所有文章除特别声明外，<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title>均采用 CC BY-NC-ND 4.0 许可协议。</a> 转载请注明出处！</p>
@@ -658,6 +671,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/31/tar/" rel="prev" title="tar">
+                tar <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -760,7 +777,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -771,7 +788,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -782,7 +799,7 @@ var jiathis_config={
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -856,7 +873,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在线教程-推荐"><span class="nav-number">1.</span> <span class="nav-text">在线教程(推荐)</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#快速入门"><span class="nav-number"></span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-启动Demo"><span class="nav-number"></span> <span class="nav-text">1. 启动Demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动arthas"><span class="nav-number"></span> <span class="nav-text">2. 启动arthas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-查看dashboard"><span class="nav-number"></span> <span class="nav-text">3. 查看dashboard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-通过thread命令来获取到arthas-demo进程的Main-Class"><span class="nav-number"></span> <span class="nav-text">4. 通过thread命令来获取到arthas-demo进程的Main Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-通过jad来反编译Main-Class"><span class="nav-number"></span> <span class="nav-text">5. 通过jad来反编译Main Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-watch"><span class="nav-number"></span> <span class="nav-text">6. watch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-退出arthas"><span class="nav-number"></span> <span class="nav-text">7. 退出arthas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶使用"><span class="nav-number"></span> <span class="nav-text">进阶使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number"></span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jvm相关"><span class="nav-number"></span> <span class="nav-text">jvm相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class-classloader相关"><span class="nav-number"></span> <span class="nav-text">class/classloader相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#monitor-watch-trace相关"><span class="nav-number"></span> <span class="nav-text">monitor/watch/trace相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#options"><span class="nav-number"></span> <span class="nav-text">options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道"><span class="nav-number"></span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台异步任务"><span class="nav-number"></span> <span class="nav-text">后台异步任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Console"><span class="nav-number"></span> <span class="nav-text">Web Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他特性"><span class="nav-number"></span> <span class="nav-text">其他特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令列表"><span class="nav-number"></span> <span class="nav-text">命令列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Arthas-基础命令"><span class="nav-number"></span> <span class="nav-text">Arthas 基础命令</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#在线教程-推荐"><span class="nav-number">1.</span> <span class="nav-text">在线教程(推荐)</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#快速入门"><span class="nav-number"></span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-启动Demo"><span class="nav-number"></span> <span class="nav-text">1. 启动Demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-启动arthas"><span class="nav-number"></span> <span class="nav-text">2. 启动arthas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-查看dashboard"><span class="nav-number"></span> <span class="nav-text">3. 查看dashboard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-通过thread命令来获取到arthas-demo进程的Main-Class"><span class="nav-number"></span> <span class="nav-text">4. 通过thread命令来获取到arthas-demo进程的Main Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-通过jad来反编译Main-Class"><span class="nav-number"></span> <span class="nav-text">5. 通过jad来反编译Main Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-watch"><span class="nav-number"></span> <span class="nav-text">6. watch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-退出arthas"><span class="nav-number"></span> <span class="nav-text">7. 退出arthas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶使用"><span class="nav-number"></span> <span class="nav-text">进阶使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number"></span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jvm相关"><span class="nav-number"></span> <span class="nav-text">jvm相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#class-classloader相关"><span class="nav-number"></span> <span class="nav-text">class/classloader相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#monitor-watch-trace相关"><span class="nav-number"></span> <span class="nav-text">monitor/watch/trace相关</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#options"><span class="nav-number"></span> <span class="nav-text">options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#管道"><span class="nav-number"></span> <span class="nav-text">管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后台异步任务"><span class="nav-number"></span> <span class="nav-text">后台异步任务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-Console"><span class="nav-number"></span> <span class="nav-text">Web Console</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他特性"><span class="nav-number"></span> <span class="nav-text">其他特性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令列表"><span class="nav-number"></span> <span class="nav-text">命令列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Arthas-基础命令"><span class="nav-number"></span> <span class="nav-text">Arthas 基础命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#牛刀小试"><span class="nav-number">1.</span> <span class="nav-text">牛刀小试</span></a></li></ol></li></ol></li></div>
             
 
           </div>
@@ -891,7 +908,7 @@ var jiathis_config={
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">4k</span>
+    <span title="Site words total count">4.1k</span>
      
 </div>
 <div class="powered-by">
