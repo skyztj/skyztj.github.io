@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nayijia.xyz/"/>
-  <updated>2019-08-13T01:31:46.437Z</updated>
+  <updated>2019-08-13T06:08:44.675Z</updated>
   <id>http://nayijia.xyz/</id>
   
   <author>
@@ -17,9 +17,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Vagrant+virtualBox+Docker</title>
+    <link href="http://nayijia.xyz/2019/08/13/Vagrant-virtualBox-Docker/"/>
+    <id>http://nayijia.xyz/2019/08/13/Vagrant-virtualBox-Docker/</id>
+    <published>2019-08-13T06:01:43.000Z</published>
+    <updated>2019-08-13T06:08:44.675Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="学习" scheme="http://nayijia.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="Docker" scheme="http://nayijia.xyz/categories/%E5%AD%A6%E4%B9%A0/Docker/"/>
+    
+    
+      <category term="Docker" scheme="http://nayijia.xyz/tags/Docker/"/>
+    
+      <category term="Vagrant+virtualBox" scheme="http://nayijia.xyz/tags/Vagrant-virtualBox/"/>
+    
+  </entry>
+  
+  <entry>
     <title>MySQL基础课06</title>
-    <link href="http://nayijia.xyz/2019/08/13/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE06/"/>
-    <id>http://nayijia.xyz/2019/08/13/MySQL基础课06/</id>
+    <link href="http://nayijia.xyz/2019/08/13/mysql/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE06/"/>
+    <id>http://nayijia.xyz/2019/08/13/mysql/MySQL基础课06/</id>
     <published>2019-08-13T01:22:54.000Z</published>
     <updated>2019-08-13T01:31:46.437Z</updated>
     
@@ -46,8 +68,8 @@
   
   <entry>
     <title>MySQL基础课05</title>
-    <link href="http://nayijia.xyz/2019/08/13/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE05/"/>
-    <id>http://nayijia.xyz/2019/08/13/MySQL基础课05/</id>
+    <link href="http://nayijia.xyz/2019/08/13/mysql/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE05/"/>
+    <id>http://nayijia.xyz/2019/08/13/mysql/MySQL基础课05/</id>
     <published>2019-08-13T01:22:50.000Z</published>
     <updated>2019-08-13T01:33:27.092Z</updated>
     
@@ -74,8 +96,8 @@
   
   <entry>
     <title>MySQL基础课04</title>
-    <link href="http://nayijia.xyz/2019/08/13/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE04/"/>
-    <id>http://nayijia.xyz/2019/08/13/MySQL基础课04/</id>
+    <link href="http://nayijia.xyz/2019/08/13/mysql/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE04/"/>
+    <id>http://nayijia.xyz/2019/08/13/mysql/MySQL基础课04/</id>
     <published>2019-08-13T01:22:46.000Z</published>
     <updated>2019-08-13T01:33:31.405Z</updated>
     
@@ -102,8 +124,8 @@
   
   <entry>
     <title>MySQL基础课03</title>
-    <link href="http://nayijia.xyz/2019/08/13/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE03/"/>
-    <id>http://nayijia.xyz/2019/08/13/MySQL基础课03/</id>
+    <link href="http://nayijia.xyz/2019/08/13/mysql/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE03/"/>
+    <id>http://nayijia.xyz/2019/08/13/mysql/MySQL基础课03/</id>
     <published>2019-08-13T01:22:43.000Z</published>
     <updated>2019-08-13T01:31:28.361Z</updated>
     
@@ -131,8 +153,8 @@
   
   <entry>
     <title>MySQL基础课02</title>
-    <link href="http://nayijia.xyz/2019/08/13/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE02/"/>
-    <id>http://nayijia.xyz/2019/08/13/MySQL基础课02/</id>
+    <link href="http://nayijia.xyz/2019/08/13/mysql/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE02/"/>
+    <id>http://nayijia.xyz/2019/08/13/mysql/MySQL基础课02/</id>
     <published>2019-08-13T01:22:31.000Z</published>
     <updated>2019-08-13T01:31:19.172Z</updated>
     
@@ -161,8 +183,8 @@
   
   <entry>
     <title>MySQL基础课01</title>
-    <link href="http://nayijia.xyz/2019/08/13/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE01/"/>
-    <id>http://nayijia.xyz/2019/08/13/MySQL基础课01/</id>
+    <link href="http://nayijia.xyz/2019/08/13/mysql/MySQL%E5%9F%BA%E7%A1%80%E8%AF%BE01/"/>
+    <id>http://nayijia.xyz/2019/08/13/mysql/MySQL基础课01/</id>
     <published>2019-08-13T01:10:32.000Z</published>
     <updated>2019-08-13T01:21:38.578Z</updated>
     
@@ -186,20 +208,6 @@
     
     
       <category term="数据库" scheme="http://nayijia.xyz/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>windows_command</title>
-    <link href="http://nayijia.xyz/2019/08/06/windows-command/"/>
-    <id>http://nayijia.xyz/2019/08/06/windows-command/</id>
-    <published>2019-08-06T03:25:02.000Z</published>
-    <updated>2019-08-06T03:25:02.647Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
