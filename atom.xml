@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://nayijia.xyz/"/>
-  <updated>2019-08-13T06:08:44.675Z</updated>
+  <updated>2019-08-15T06:23:48.051Z</updated>
   <id>http://nayijia.xyz/</id>
   
   <author>
@@ -17,13 +17,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringUtil</title>
+    <link href="http://nayijia.xyz/2019/08/15/SpringUtil/"/>
+    <id>http://nayijia.xyz/2019/08/15/SpringUtil/</id>
+    <published>2019-08-15T06:19:44.000Z</published>
+    <updated>2019-08-15T06:23:48.051Z</updated>
+    
+    <content type="html"><![CDATA[<p>SpringUtil ：从上下文（ApplicationContext）中获取bean对象</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.beans.BeansException;</span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.ApplicationContext;</span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringUtil</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">volatile</span> <span class="keyword">static</span> ApplicationContext context = <span class="keyword">null</span>;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(ApplicationContext ctx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context == <span class="keyword">null</span>) &#123;</span><br><span class="line">            context = ctx;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> context.getBean(requiredType);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(String name)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> (T) context.getBean(name);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">getBean</span><span class="params">(String name, Class&lt;T&gt; requiredType)</span> <span class="keyword">throws</span> BeansException </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (context != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> context.getBean(name, requiredType);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;SpringUtil ：从上下文（ApplicationContext）中获取bean对象&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="http://nayijia.xyz/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="tool package" scheme="http://nayijia.xyz/categories/%E5%AD%A6%E4%B9%A0/tool-package/"/>
+    
+      <category term="spring boot" scheme="http://nayijia.xyz/categories/%E5%AD%A6%E4%B9%A0/tool-package/spring-boot/"/>
+    
+    
+      <category term="spring boot" scheme="http://nayijia.xyz/tags/spring-boot/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Vagrant+virtualBox+Docker</title>
     <link href="http://nayijia.xyz/2019/08/13/Vagrant-virtualBox-Docker/"/>
     <id>http://nayijia.xyz/2019/08/13/Vagrant-virtualBox-Docker/</id>
     <published>2019-08-13T06:01:43.000Z</published>
-    <updated>2019-08-13T06:08:44.675Z</updated>
+    <updated>2019-08-15T04:01:36.172Z</updated>
+    
+    <content type="html"><![CDATA[<p>下载最新的镜像文件<a href="https://www.vagrantup.com/downloads.html" target="_blank" rel="noopener">Vagrant</a>与最新的安装包<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">virtualBox</a></p><p>Vagrant，</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;下载最新的镜像文件&lt;a href=&quot;https://www.vagrantup.com/downloads.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vagrant&lt;/a&gt;与最新的安装包&lt;a href=&quot;https://www.virtual
+      
     
     </summary>
     

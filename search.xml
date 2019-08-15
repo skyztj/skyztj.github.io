@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SpringUtil]]></title>
+    <url>%2F2019%2F08%2F15%2FSpringUtil%2F</url>
+    <content type="text"><![CDATA[SpringUtil ：从上下文（ApplicationContext）中获取bean对象 12345678910111213141516171819202122232425262728293031323334353637import org.springframework.beans.BeansException;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.context.ApplicationContext;import org.springframework.stereotype.Component;@Componentpublic class SpringUtil &#123; private volatile static ApplicationContext context = null; @Autowired public void init(ApplicationContext ctx) &#123; if (context == null) &#123; context = ctx; &#125; &#125; public static &lt;T&gt; T getBean(Class&lt;T&gt; requiredType) throws BeansException &#123; if (context != null) &#123; return context.getBean(requiredType); &#125; return null; &#125; @SuppressWarnings("unchecked") public static &lt;T&gt; T getBean(String name) throws BeansException &#123; if (context != null) &#123; return (T) context.getBean(name); &#125; return null; &#125; public static &lt;T&gt; T getBean(String name, Class&lt;T&gt; requiredType) throws BeansException &#123; if (context != null) &#123; return context.getBean(name, requiredType); &#125; return null; &#125;&#125;]]></content>
+      <categories>
+        <category>学习</category>
+        <category>tool package</category>
+        <category>spring boot</category>
+      </categories>
+      <tags>
+        <tag>spring boot</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vagrant+virtualBox+Docker]]></title>
     <url>%2F2019%2F08%2F13%2FVagrant-virtualBox-Docker%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[下载最新的镜像文件Vagrant与最新的安装包virtualBox Vagrant，]]></content>
       <categories>
         <category>学习</category>
         <category>Docker</category>
