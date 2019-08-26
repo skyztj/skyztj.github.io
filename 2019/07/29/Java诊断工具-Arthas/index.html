@@ -85,15 +85,15 @@
 <meta name="keywords" content="Arthas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java诊断工具-Arthas">
-<meta property="og:url" content="http://nayijia.xyz/post/25e17bef.html">
+<meta property="og:url" content="http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/index.html">
 <meta property="og:site_name" content="Sky">
 <meta property="og:description" content="Arthas 是Alibaba开源的Java诊断工具。 当你遇到以下类似问题而束手无策时，Arthas可以帮助你解决：  这个类从哪个 jar 包加载的？为什么会报各种类相关的 Exception？ 我改的代码为什么没有执行到？难道是我没 commit？分支搞错了？ 遇到问题无法在线上 debug，难道只能通过加日志再重新发布吗？ 线上遇到某个用户的数据处理有问题，但线上同样无法 debug，线">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://github.com/alibaba/arthas/raw/master/site/src/site/sphinx/arthas.png">
-<meta property="og:image" content="http://nayijia.xyz/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C12312344.png">
-<meta property="og:image" content="http://nayijia.xyz/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062610770.png">
-<meta property="og:image" content="http://nayijia.xyz/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062869194.png">
-<meta property="og:image" content="http://nayijia.xyz/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062933540.png">
+<meta property="og:image" content="http://nayijia.xyz/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C12312344.png">
+<meta property="og:image" content="http://nayijia.xyz/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062610770.png">
+<meta property="og:image" content="http://nayijia.xyz/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062869194.png">
+<meta property="og:image" content="http://nayijia.xyz/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062933540.png">
 <meta property="og:updated_time" content="2019-08-19T04:04:35.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java诊断工具-Arthas">
@@ -128,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://nayijia.xyz/post/25e17bef.html">
+  <link rel="canonical" href="http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/">
 
 
 
@@ -301,7 +301,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://nayijia.xyz/post/25e17bef.html">
+    <link itemprop="mainEntityOfPage" href="http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ztj">
@@ -583,12 +583,12 @@
 </ul>
 <h3 id="牛刀小试"><a href="#牛刀小试" class="headerlink" title="牛刀小试"></a><em>牛刀小试</em></h3><p>测试环境使用arthas工具包获取内存里运行的数据</p>
 <p>使用sc 查看目标类是否已经被加载</p>
-<p><img src="/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C12312344.png" alt></p>
+<p><img src="/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C12312344.png" alt></p>
 <p>通过watch 查看getPropertyBeans（）方法返回的数据</p>
-<p><img src="/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062610770.png" alt></p>
+<p><img src="/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062610770.png" alt></p>
 <p> 执行命令：watch com.ccservice.control.TrainPropertyMessage  getPropertyBeans  returnObj</p>
-<p><img src="/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062869194.png" alt></p>
-<p><img src="/post/25e17bef/D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062933540.png" alt></p>
+<p><img src="/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062869194.png" alt></p>
+<p><img src="/.xyz//D:%5Cblog%5Csource_posts%5CJava%E8%AF%8A%E6%96%AD%E5%B7%A5%E5%85%B7-Arthas%5C1565062933540.png" alt></p>
 <p>获取到的数据，中文不过是乱码，后续再解决。</p>
 
       
@@ -605,12 +605,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/post/25e17bef.html">Java诊断工具-Arthas</a></p>
+  <p><span>本文标题:</span><a href="/2019/07/29/Java诊断工具-Arthas/">Java诊断工具-Arthas</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ztj 的个人博客">ztj</a></p>
   <p><span>发布时间:</span>2019年07月29日 - 13:07</p>
   <p><span>最后更新:</span>2019年08月19日 - 12:08</p>
-  <p><span>原始链接:</span><a href="/post/25e17bef.html" title="Java诊断工具-Arthas">http://nayijia.xyz/post/25e17bef.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://nayijia.xyz/post/25e17bef.html" aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/2019/07/29/Java诊断工具-Arthas/" title="Java诊断工具-Arthas">http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://nayijia.xyz/2019/07/29/Java诊断工具-Arthas/" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 本博客所有文章除特别声明外，<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title>均采用 CC BY-NC-ND 4.0 许可协议。</a> 转载请注明出处！</p>
 </div>
@@ -662,7 +662,7 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/7b25d017.html" rel="next" title="redis">
+              <a href="/2019/07/26/redis/" rel="next" title="redis">
                 <i class="fa fa-chevron-left"></i> redis
               </a>
             
@@ -672,7 +672,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/6e545368.html" rel="prev" title="tar">
+              <a href="/2019/07/31/tar/" rel="prev" title="tar">
                 tar <i class="fa fa-chevron-right"></i>
               </a>
             
