@@ -295,7 +295,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/f80385d.html">
+    <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/f80385dasdasd.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ztj">
@@ -314,7 +314,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/post/f80385d.html" itemprop="url">windows递归删除指定路径下的文件</a></h1>
+                <a class="post-title-link" href="/post/f80385dasdasd.html" itemprop="url">windows递归删除指定路径下的文件</a></h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  107
+                  111
                 </span>
               
 
@@ -421,7 +421,8 @@
           
             <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </span><br><span class="line">	String path=<span class="string">"D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository"</span>;</span><br><span class="line">    deleteByPath(path,<span class="string">".lastUpdated"</span>,<span class="string">".sha1-in-progress"</span>)</span><br><span class="line">&#125;</span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteByPath</span><span class="params">(String path,String ...keys)</span></span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(path);</span><br><span class="line">        deleteFile(file,keys);</span><br><span class="line"> &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 删除文件</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteFile</span><span class="params">(File file, String... keys)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">null</span> != file) &#123;</span><br><span class="line">          <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">              <span class="keyword">for</span> (File f : file.listFiles()) &#123;</span><br><span class="line">                  deleteFile(f,keys);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">for</span> (String key : keys) &#123;</span><br><span class="line">                  <span class="keyword">if</span> (file.getName().endsWith(key)) &#123;</span><br><span class="line">                      System.out.println(file.getName() + <span class="string">"删除结果:"</span> + (file.delete() ?<span class="string">"SUCCESS"</span> : <span class="string">"FAIL"</span>));</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="//nayijia.xyz/post/f80385d/1567153129406.png" alt="执行结果"></p>
+<p>执行结果</p>
+<p><img src="//nayijia.xyz/post/f80385dasdasd/1567153129406.png" alt="执行结果"></p>
 
           
         

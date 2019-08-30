@@ -85,16 +85,16 @@
 <meta name="keywords" content="tools">
 <meta property="og:type" content="article">
 <meta property="og:title" content="windows递归删除指定路径下的文件">
-<meta property="og:url" content="http://http://nayijia.xyz/post/f80385d.html">
+<meta property="og:url" content="http://http://nayijia.xyz/post/f80385dasdasd.html">
 <meta property="og:site_name" content="Sky">
 <meta property="og:description" content="12345678910111213141516171819202122232425262728public static void main(String[] args) &amp;#123;    	String path=&quot;D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository&quot;;    deleteByPath(path,&quot;.last">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://nayijia.xyz/post/f80385d/1567153129406.png">
-<meta property="og:updated_time" content="2019-08-30T08:31:05.380Z">
+<meta property="og:image" content="http://nayijia.xyz/post/f80385dasdasd/1567153129406.png">
+<meta property="og:updated_time" content="2019-08-30T08:40:22.449Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="windows递归删除指定路径下的文件">
 <meta name="twitter:description" content="12345678910111213141516171819202122232425262728public static void main(String[] args) &amp;#123;    	String path=&quot;D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository&quot;;    deleteByPath(path,&quot;.last">
-<meta name="twitter:image" content="http://nayijia.xyz/post/f80385d/1567153129406.png">
+<meta name="twitter:image" content="http://nayijia.xyz/post/f80385dasdasd/1567153129406.png">
 
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <link rel="canonical" href="http://http://nayijia.xyz/post/f80385d.html">
+  <link rel="canonical" href="http://http://nayijia.xyz/post/f80385dasdasd.html">
 
 
 
@@ -297,7 +297,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/f80385d.html">
+    <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/f80385dasdasd.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ztj">
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  107
+                  111
                 </span>
               
 
@@ -419,7 +419,8 @@
       
         <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;    </span><br><span class="line">	String path=<span class="string">"D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository"</span>;</span><br><span class="line">    deleteByPath(path,<span class="string">".lastUpdated"</span>,<span class="string">".sha1-in-progress"</span>)</span><br><span class="line">&#125;</span><br><span class="line"> <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteByPath</span><span class="params">(String path,String ...keys)</span></span>&#123;</span><br><span class="line">        File file = <span class="keyword">new</span> File(path);</span><br><span class="line">        deleteFile(file,keys);</span><br><span class="line"> &#125;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 删除文件</span></span><br><span class="line"><span class="comment">   *</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@param</span> file</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">deleteFile</span><span class="params">(File file, String... keys)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="keyword">null</span> != file) &#123;</span><br><span class="line">          <span class="keyword">if</span> (file.isDirectory()) &#123;</span><br><span class="line">              <span class="keyword">for</span> (File f : file.listFiles()) &#123;</span><br><span class="line">                  deleteFile(f,keys);</span><br><span class="line">              &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">              <span class="keyword">for</span> (String key : keys) &#123;</span><br><span class="line">                  <span class="keyword">if</span> (file.getName().endsWith(key)) &#123;</span><br><span class="line">                      System.out.println(file.getName() + <span class="string">"删除结果:"</span> + (file.delete() ?<span class="string">"SUCCESS"</span> : <span class="string">"FAIL"</span>));</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<p><img src="//nayijia.xyz/post/f80385d/1567153129406.png" alt="执行结果"></p>
+<p>执行结果</p>
+<p><img src="//nayijia.xyz/post/f80385dasdasd/1567153129406.png" alt="执行结果"></p>
 
       
     </div>
@@ -435,12 +436,12 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/post/f80385d.html">windows递归删除指定路径下的文件</a></p>
+  <p><span>本文标题:</span><a href="/post/f80385dasdasd.html">windows递归删除指定路径下的文件</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 ztj 的个人博客">ztj</a></p>
   <p><span>发布时间:</span>2019年08月30日 - 16:08</p>
   <p><span>最后更新:</span>2019年08月30日 - 16:08</p>
-  <p><span>原始链接:</span><a href="/post/f80385d.html" title="windows递归删除指定路径下的文件">http://http://nayijia.xyz/post/f80385d.html</a>
-    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://http://nayijia.xyz/post/f80385d.html" aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/post/f80385dasdasd.html" title="windows递归删除指定路径下的文件">http://http://nayijia.xyz/post/f80385dasdasd.html</a>
+    <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://http://nayijia.xyz/post/f80385dasdasd.html" aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> 本博客所有文章除特别声明外，<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title>均采用 CC BY-NC-ND 4.0 许可协议。</a> 转载请注明出处！</p>
 </div>

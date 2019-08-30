@@ -2,8 +2,8 @@
 <search>
   <entry>
     <title><![CDATA[windows递归删除指定路径下的文件]]></title>
-    <url>%2Fpost%2Ff80385d.html</url>
-    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728public static void main(String[] args) &#123; String path="D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository"; deleteByPath(path,".lastUpdated",".sha1-in-progress")&#125; private static void deleteByPath(String path,String ...keys)&#123; File file = new File(path); deleteFile(file,keys); &#125; /** * 删除文件 * * @param file */ private static void deleteFile(File file, String... keys) &#123; if (null != file) &#123; if (file.isDirectory()) &#123; for (File f : file.listFiles()) &#123; deleteFile(f,keys); &#125; &#125; else &#123; for (String key : keys) &#123; if (file.getName().endsWith(key)) &#123; System.out.println(file.getName() + "删除结果:" + (file.delete() ?"SUCCESS" : "FAIL")); &#125; &#125; &#125; &#125; &#125;]]></content>
+    <url>%2Fpost%2Ff80385dasdasd.html</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728public static void main(String[] args) &#123; String path="D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository"; deleteByPath(path,".lastUpdated",".sha1-in-progress")&#125; private static void deleteByPath(String path,String ...keys)&#123; File file = new File(path); deleteFile(file,keys); &#125; /** * 删除文件 * * @param file */ private static void deleteFile(File file, String... keys) &#123; if (null != file) &#123; if (file.isDirectory()) &#123; for (File f : file.listFiles()) &#123; deleteFile(f,keys); &#125; &#125; else &#123; for (String key : keys) &#123; if (file.getName().endsWith(key)) &#123; System.out.println(file.getName() + "删除结果:" + (file.delete() ?"SUCCESS" : "FAIL")); &#125; &#125; &#125; &#125; &#125; 执行结果]]></content>
       <categories>
         <category>tools</category>
       </categories>
