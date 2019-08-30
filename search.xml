@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[windows递归删除指定路径下的文件]]></title>
+    <url>%2Fpost%2Ff80385d.html</url>
+    <content type="text"><![CDATA[12345678910111213141516171819202122232425262728public static void main(String[] args) &#123; String path="D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository"; deleteByPath(path,".lastUpdated",".sha1-in-progress")&#125; private static void deleteByPath(String path,String ...keys)&#123; File file = new File(path); deleteFile(file,keys); &#125; /** * 删除文件 * * @param file */ private static void deleteFile(File file, String... keys) &#123; if (null != file) &#123; if (file.isDirectory()) &#123; for (File f : file.listFiles()) &#123; deleteFile(f,keys); &#125; &#125; else &#123; for (String key : keys) &#123; if (file.getName().endsWith(key)) &#123; System.out.println(file.getName() + "删除结果:" + (file.delete() ?"SUCCESS" : "FAIL")); &#125; &#125; &#125; &#125; &#125;]]></content>
+      <categories>
+        <category>tools</category>
+      </categories>
+      <tags>
+        <tag>tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SpringUtil]]></title>
     <url>%2Fpost%2Ff7ad0ec5.html</url>
     <content type="text"><![CDATA[SpringUtil ：从上下文（ApplicationContext）中获取bean对象 12345678910111213141516171819202122232425262728293031323334353637import org.springframework.beans.BeansException;import org.springframework.beans.factory.annotation.Autowired;import org.springframework.context.ApplicationContext;import org.springframework.stereotype.Component;@Componentpublic class SpringUtil &#123; private volatile static ApplicationContext context = null; @Autowired public void init(ApplicationContext ctx) &#123; if (context == null) &#123; context = ctx; &#125; &#125; public static &lt;T&gt; T getBean(Class&lt;T&gt; requiredType) throws BeansException &#123; if (context != null) &#123; return context.getBean(requiredType); &#125; return null; &#125; @SuppressWarnings("unchecked") public static &lt;T&gt; T getBean(String name) throws BeansException &#123; if (context != null) &#123; return (T) context.getBean(name); &#125; return null; &#125; public static &lt;T&gt; T getBean(String name, Class&lt;T&gt; requiredType) throws BeansException &#123; if (context != null) &#123; return context.getBean(name, requiredType); &#125; return null; &#125;&#125;]]></content>
