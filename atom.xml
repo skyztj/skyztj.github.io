@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://http://nayijia.xyz/"/>
-  <updated>2019-09-10T09:43:49.361Z</updated>
+  <updated>2019-09-10T09:52:03.322Z</updated>
   <id>http://http://nayijia.xyz/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://http://nayijia.xyz/post/e05797c3.html"/>
     <id>http://http://nayijia.xyz/post/e05797c3.html</id>
     <published>2019-09-10T09:15:27.000Z</published>
-    <updated>2019-09-10T09:43:49.361Z</updated>
+    <updated>2019-09-10T09:52:03.322Z</updated>
     
-    <content type="html"><![CDATA[<p>Statement、PreparedStatement和CallableStatement</p><h3 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h3><ul><li><p>Statement继承自Wrapper</p></li><li><p>PreparedStatement继承自Statement</p></li><li><p>CallableStatement继承自PreparedStatement</p><a id="more"></a></li></ul><p><img src="//nayijia.xyz/post/e05797c3897393-20190123094256964-1970249663.png" alt="img"></p><h3 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h3><ul><li>Statement接口提供了执行语句与获取结果的基本方法；</li><li>PreparedStatement接口增加了对于输入参数处理的方法;</li><li>CallableStatement接口增加了调用存储过程核函数以及处理输出参数的方法。</li></ul><p><strong>Statement</strong></p><p>场景：普通的不带参的查询SQL</p><p><strong>PreparedStatement</strong></p><p>场景：支持可变参数的SQL</p><p><strong>CallableStatement</strong></p><p>场景：支持调用存储过程,提供了对输出和输入/输出参数(INOUT)的支持;</p><p><strong>SQL的执行需要编译和解析</strong></p><p>Statement每次的执行都需要编译SQL</p><p>PreparedStatement会预编译，会被缓冲，在缓存区中可以发现预编译的命令，虽然会被再次解析，但不会被再次编译，能够有效提高系统性能</p><p><strong>使用PreparedStatement能够预防SQL注入攻击</strong></p><p>假如登录SQL为select * from user where name=’姓名’ and password=’密码’ ，如果在登录框密码处输入 “密码 or 1=1”，那么SQL就成为了</p><p>select * from user where name=’姓名’ and password=’密码’ or 1=1  ，这就是SQL注入</p><p>所谓SQL注入就是将SQL语句片段插入到被执行的语句中，把SQL命令插入到Web表单提交或者输入域名或者页面请求的查询字符串，最终达到欺骗服务器，达到执行恶意SQL命令的目的。</p><p>PreparedStatement通过预编译，原有的SQL语句中的参数转换为占位符？ 的形式，相当于变成了填空题，不管你输入的内容是什么，都是作为参数，而不可能作为SQL的一部分</p><p>（要注意 #与$的区别)</p><p>你把密码输入为‘密码 or 1=1’然后提交，他会转换为  and password=’密码’ or 1=1’    输入内容都转换为纯粹参数</p><p><strong>小结：</strong></p><p>静态SQL可以用Statement和PreparedStatement，带参数的用PreparedStatement，存储过程用CallableStatement</p><p>但是基本上没有道理非要使用Statement，而且很少情况不需要参数，所以能使用PreparedStatement的情况下就不要使用Statement了</p><p>Statement、PreparedStatement和CallableStatement三种执行对象，为执行SQL而生，所以他们的重中之重全都是执行SQL</p>]]></content>
+    <content type="html"><![CDATA[<p>Statement、PreparedStatement和CallableStatement</p><h3 id="继承关系"><a href="#继承关系" class="headerlink" title="继承关系"></a>继承关系</h3><ul><li><p>Statement继承自Wrapper</p></li><li><p>PreparedStatement继承自Statement</p></li><li><p>CallableStatement继承自PreparedStatement</p><a id="more"></a></li></ul><p><img src="//nayijia.xyz/post/e05797c3/extendsImg.png" alt="img"></p><h3 id="区别与联系"><a href="#区别与联系" class="headerlink" title="区别与联系"></a>区别与联系</h3><ul><li>Statement接口提供了执行语句与获取结果的基本方法；</li><li>PreparedStatement接口增加了对于输入参数处理的方法;</li><li>CallableStatement接口增加了调用存储过程核函数以及处理输出参数的方法。</li></ul><p><strong>Statement</strong></p><p>场景：普通的不带参的查询SQL</p><p><strong>PreparedStatement</strong></p><p>场景：支持可变参数的SQL</p><p><strong>CallableStatement</strong></p><p>场景：支持调用存储过程,提供了对输出和输入/输出参数(INOUT)的支持;</p><p><strong>SQL的执行需要编译和解析</strong></p><p>Statement每次的执行都需要编译SQL</p><p>PreparedStatement会预编译，会被缓冲，在缓存区中可以发现预编译的命令，虽然会被再次解析，但不会被再次编译，能够有效提高系统性能</p><p><strong>使用PreparedStatement能够预防SQL注入攻击</strong></p><p>假如登录SQL为select * from user where name=’姓名’ and password=’密码’ ，如果在登录框密码处输入 “密码 or 1=1”，那么SQL就成为了</p><p>select * from user where name=’姓名’ and password=’密码’ or 1=1  ，这就是SQL注入</p><p>所谓SQL注入就是将SQL语句片段插入到被执行的语句中，把SQL命令插入到Web表单提交或者输入域名或者页面请求的查询字符串，最终达到欺骗服务器，达到执行恶意SQL命令的目的。</p><p>PreparedStatement通过预编译，原有的SQL语句中的参数转换为占位符？ 的形式，相当于变成了填空题，不管你输入的内容是什么，都是作为参数，而不可能作为SQL的一部分</p><p>（要注意 #与$的区别)</p><p>你把密码输入为‘密码 or 1=1’然后提交，他会转换为  and password=’密码’ or 1=1’    输入内容都转换为纯粹参数</p><p><strong>小结：</strong></p><p>静态SQL可以用Statement和PreparedStatement，带参数的用PreparedStatement，存储过程用CallableStatement</p><p>但是基本上没有道理非要使用Statement，而且很少情况不需要参数，所以能使用PreparedStatement的情况下就不要使用Statement了</p><p>Statement、PreparedStatement和CallableStatement三种执行对象，为执行SQL而生，所以他们的重中之重全都是执行SQL</p>]]></content>
     
     <summary type="html">
     
