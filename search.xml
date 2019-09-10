@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[JDBC_Statement、PreparedStatement和CallableStatement三者之间的关系]]></title>
+    <url>%2Fpost%2Fe05797c3.html</url>
+    <content type="text"><![CDATA[Statement、PreparedStatement和CallableStatement 继承关系 Statement继承自Wrapper PreparedStatement继承自Statement CallableStatement继承自PreparedStatement 区别与联系 Statement接口提供了执行语句与获取结果的基本方法； PreparedStatement接口增加了对于输入参数处理的方法; CallableStatement接口增加了调用存储过程核函数以及处理输出参数的方法。 Statement 场景：普通的不带参的查询SQL PreparedStatement 场景：支持可变参数的SQL CallableStatement 场景：支持调用存储过程,提供了对输出和输入/输出参数(INOUT)的支持; SQL的执行需要编译和解析 Statement每次的执行都需要编译SQL PreparedStatement会预编译，会被缓冲，在缓存区中可以发现预编译的命令，虽然会被再次解析，但不会被再次编译，能够有效提高系统性能 使用PreparedStatement能够预防SQL注入攻击 假如登录SQL为select * from user where name=’姓名’ and password=’密码’ ，如果在登录框密码处输入 “密码 or 1=1”，那么SQL就成为了 select * from user where name=’姓名’ and password=’密码’ or 1=1 ，这就是SQL注入 所谓SQL注入就是将SQL语句片段插入到被执行的语句中，把SQL命令插入到Web表单提交或者输入域名或者页面请求的查询字符串，最终达到欺骗服务器，达到执行恶意SQL命令的目的。 PreparedStatement通过预编译，原有的SQL语句中的参数转换为占位符？ 的形式，相当于变成了填空题，不管你输入的内容是什么，都是作为参数，而不可能作为SQL的一部分 （要注意 #与$的区别) 你把密码输入为‘密码 or 1=1’然后提交，他会转换为 and password=’密码’ or 1=1’ 输入内容都转换为纯粹参数 小结： 静态SQL可以用Statement和PreparedStatement，带参数的用PreparedStatement，存储过程用CallableStatement 但是基本上没有道理非要使用Statement，而且很少情况不需要参数，所以能使用PreparedStatement的情况下就不要使用Statement了 Statement、PreparedStatement和CallableStatement三种执行对象，为执行SQL而生，所以他们的重中之重全都是执行SQL]]></content>
+      <categories>
+        <category>学习</category>
+        <category>JDBC</category>
+        <category>Statement</category>
+      </categories>
+      <tags>
+        <tag>JDBC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[windows递归删除指定路径下的文件]]></title>
     <url>%2Fpost%2Ff80385dasdasd.html</url>
     <content type="text"><![CDATA[12345678910111213141516171819202122232425262728public static void main(String[] args) &#123; String path="D:\\compilerEnvironment\\apache-maven-3.6.0\\localRepository"; deleteByPath(path,".lastUpdated",".sha1-in-progress")&#125; private static void deleteByPath(String path,String ...keys)&#123; File file = new File(path); deleteFile(file,keys); &#125; /** * 删除文件 * * @param file */ private static void deleteFile(File file, String... keys) &#123; if (null != file) &#123; if (file.isDirectory()) &#123; for (File f : file.listFiles()) &#123; deleteFile(f,keys); &#125; &#125; else &#123; for (String key : keys) &#123; if (file.getName().endsWith(key)) &#123; System.out.println(file.getName() + "删除结果:" + (file.delete() ?"SUCCESS" : "FAIL")); &#125; &#125; &#125; &#125; &#125; 执行结果]]></content>
