@@ -458,6 +458,192 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/cde32b2e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ztj">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Sky">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/post/cde32b2e.html" itemprop="url">从一个日志文件中根据关键字读取日志，记录出现的次数，最后按照次数排序打印</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-11T16:47:28+08:00">
+                2019-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程题/" itemprop="url" rel="index">
+                    <span itemprop="name">编程题</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  496
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>从一个日志文件中根据关键字读取日志，记录出现的次数，最后按照次数排序打印</p>
+<p>题目分析：</p>
+<ul>
+<li>获取日志文件的内容。</li>
+<li>全文匹配关键词，记录关键词出现的次数。</li>
+<li>根据关键词出现的次数，排序输出。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SearchKesByLogs</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">    File file = <span class="keyword">new</span> File(<span class="string">"D:/test.txt"</span>);</span><br><span class="line">    System.out.println(<span class="string">"请输入关键字：（以空格为间隔，并且关键词不能包含`符号）"</span>);</span><br><span class="line">    Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">    String input = scanner.nextLine();</span><br><span class="line">    String[] keywords = input.split(<span class="string">" "</span>);</span><br><span class="line">    <span class="keyword">long</span> start = System.currentTimeMillis();</span><br><span class="line">    BufferedReader bufferedReader = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> FileReader(file));</span><br><span class="line">    System.out.println(Arrays.toString(keywords));</span><br><span class="line">    <span class="comment">//该map的key为关键字，value为关键字出现次数</span></span><br><span class="line">    Map&lt;String, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;String, Integer&gt;();</span><br><span class="line">    String result = <span class="keyword">null</span>;</span><br><span class="line">    <span class="comment">//按行读取日志文件，对每一行分别计算关键字次数，累加进map</span></span><br><span class="line">    <span class="keyword">while</span>((result = bufferedReader.readLine()) != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="comment">//由于split方法有一个特性，就是会忽略待分割对象结尾的一个或多个分割符，所以如果分割符（关键词）			位于一行结尾，就无法进行统计</span></span><br><span class="line">        <span class="comment">//在此处我们给每行文本结尾添加一个自定义结束符"`"（注意，结束符不能干扰到关键词！）</span></span><br><span class="line">		<span class="comment">//result += "`";</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; keywords.length; i++ )&#123;</span><br><span class="line">                <span class="comment">//通过split方法实现搜索关键字次数功能</span></span><br><span class="line">                <span class="keyword">int</span> count = (result.split(keywords[i])).length - <span class="number">1</span>;</span><br><span class="line">                map.put(keywords[i], map.get(keywords[i]) == <span class="keyword">null</span> ? count : (map.get(keywords[i]) + count));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//将上面map的每个Entry存入list</span></span><br><span class="line">    ArrayList&lt;Map.Entry&lt;String, Integer&gt;&gt; entryArrayList = <span class="keyword">new</span> 				ArrayList&lt;Map.Entry&lt;String, Integer&gt;&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (Map.Entry&lt;String, Integer&gt; m : map.entrySet())&#123;</span><br><span class="line">        entryArrayList.add(m);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//自定义list的比较器，根据value从大到小排列Entry元素</span></span><br><span class="line">    Collections.sort(entryArrayList, <span class="keyword">new</span> Comparator&lt;Map.Entry&lt;String, Integer&gt;&gt;() &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Map.Entry&lt;String, Integer&gt; o1, Map.Entry&lt;String, Integer&gt; o2)</span> 		</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> o2.getValue() - o1.getValue();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">for</span> (Map.Entry&lt;String, Integer&gt; m : entryArrayList)&#123;</span><br><span class="line">        System.out.println(m.getKey() + <span class="string">":"</span> + m.getValue());</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> end = System.currentTimeMillis();</span><br><span class="line">    System.out.println(<span class="string">"搜索耗时："</span> + (end - start) + <span class="string">" ms"</span>);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="//nayijia.xyz/post/cde32b2e/1568195949424.png" alt="控制台输出"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+    <div>
+          
+    </div>
+    
+
+    
+
+    
+    <div>
+      
+    </div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/f80385dasdasd.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1026,185 +1212,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://http://nayijia.xyz/post/7b25d017.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ztj">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Sky">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/post/7b25d017.html" itemprop="url">redis</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-26T19:06:54+08:00">
-                2019-07-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/redis/" itemprop="url" rel="index">
-                    <span itemprop="name">redis</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  23
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p> 命令资料收集</p>
-<p>Redis：<a href="http://doc.redisfans.com/" target="_blank" rel="noopener">http://doc.redisfans.com/</a> </p>
-<p>其他信息：<a href="https://www.runoob.com/redis/redis-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/redis/redis-tutorial.html</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    <div>
-          
-    </div>
-    
-
-    
-
-    
-    <div>
-      
-    </div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1255,7 +1262,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1266,7 +1273,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1370,7 +1377,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">27.5k</span>
+    <span title="Site words total count">28k</span>
      
 </div>
 <div class="powered-by">
